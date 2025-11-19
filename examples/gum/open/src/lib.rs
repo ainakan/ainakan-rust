@@ -1,6 +1,6 @@
 /* This example is in the public domain */
 
-use frida_gum as gum;
+use ainakan_gum as gum;
 use gum::{
     interceptor::{Interceptor, InvocationContext, InvocationListener},
     Gum, Module,

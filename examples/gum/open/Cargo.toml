@@ -10,4 +10,4 @@ publish = false
 crate-type = ["cdylib"]
 
 [dependencies]
-frida-gum = { path = "../../../frida-gum", features = ["invocation-listener"] }
+ainakan-gum = { path = "../../../ainakan-gum", features = ["invocation-listener"] }

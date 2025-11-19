@@ -1,4 +1,4 @@
-use frida_gum::{MemoryAccessMonitor, MemoryRange, NativePointer};
+use ainakan_gum::{MemoryAccessMonitor, MemoryRange, NativePointer};
 use std::sync::atomic::AtomicUsize;
 
 static HIT: AtomicUsize = AtomicUsize::new(0);
@@ -8,11 +8,11 @@ fn main() {
     let block =
         unsafe { std::alloc::alloc(std::alloc::Layout::from_size_align_unchecked(BLK_SIZE, 1)) };
     let range = MemoryRange::new(NativePointer(block as *mut _), BLK_SIZE);
-    let gum = unsafe { frida_gum::Gum::obtain() };
+    let gum = unsafe { ainakan_gum::Gum::obtain() };
     let mam = MemoryAccessMonitor::new(
         &gum,
         vec![range],
-        frida_gum::PageProtection::Write,
+        ainakan_gum::PageProtection::Write,
         true,
         |_, details| {
             println!(

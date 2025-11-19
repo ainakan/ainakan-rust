@@ -1,15 +1,15 @@
-use frida::{Frida, Message};
+use ainakan::{Ainakan, Message};
 use std::sync::LazyLock;
 use std::{thread, time::Duration};
 
-static FRIDA: LazyLock<Frida> = LazyLock::new(|| unsafe { Frida::obtain() });
+static AINAKAN: LazyLock<Ainakan> = LazyLock::new(|| unsafe { Ainakan::obtain() });
 
 fn main() {
-    let device_manager = frida::DeviceManager::obtain(&FRIDA);
+    let device_manager = ainakan::DeviceManager::obtain(&AINAKAN);
     let local_device = device_manager.get_local_device();
 
     if let Ok(device) = local_device {
-        println!("[*] Frida version: {}", frida::Frida::version());
+        println!("[*] Ainakan version: {}", ainakan::Ainakan::version());
         println!("[*] Device name: {}", device.get_name());
 
         // Attach to the program
@@ -37,7 +37,7 @@ fn main() {
                 }
             };
         "#;
-        let mut script_option = frida::ScriptOption::default();
+        let mut script_option = ainakan::ScriptOption::default();
         let mut script = match session.create_script(script_source, &mut script_option) {
             Ok(s) => s,
             Err(err) => {
@@ -73,7 +73,7 @@ fn main() {
 
 struct Handler;
 
-impl frida::ScriptHandler for Handler {
+impl ainakan::ScriptHandler for Handler {
     fn on_message(&mut self, message: Message, _data: Option<Vec<u8>>) {
         println!("- {:?}", message);
     }

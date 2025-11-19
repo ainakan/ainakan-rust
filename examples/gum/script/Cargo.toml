@@ -10,8 +10,8 @@ publish = false
 name = "script"
 
 [features]
-auto-download = ["frida-gum/auto-download"]
+auto-download = ["ainakan-gum/auto-download"]
 
 [dependencies]
-frida-gum = { path = "../../../frida-gum", features = ["script"] }
+ainakan-gum = { path = "../../../ainakan-gum", features = ["script"] }
 lazy_static = "1.4"

@@ -1,8 +1,8 @@
-Example to showing how to execute a JavaScript Frida function from Rust using `script.exports`.
+Example to showing how to execute a JavaScript Ainakan function from Rust using `script.exports`.
 Once ran you should expect an output similar to the next one:
 
 ```
-[*] Frida version: 16.4.8
+[*] Ainakan version: 16.4.8
 [*] Device name: Local System
 [*] Script loaded.
 ["increment", "nIncrement", "getValue", "sumVals", "bye"]

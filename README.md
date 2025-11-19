@@ -1,12 +1,12 @@
-frida-rust
+ainakan-rust
 ==========
 
-Rust bindings for [Frida](http://www.frida.re/).
+Rust bindings for [Ainakan](http://www.ainakan.re/).
 
 ## Install
 
-- Build Frida, or download the devkits for your system (see `frida-gum` or `frida-core` README for version)
+- Build Ainakan, or download the devkits for your system (see `ainakan-gum` or `ainakan-core` README for version)
 - For crate installation:
-    - Move the frida-gum and frida-core devkits into `rustc-link-search`, e.g.: `/usr/local/{include, lib}` on Unix
+    - Move the ainakan-gum and ainakan-core devkits into `rustc-link-search`, e.g.: `/usr/local/{include, lib}` on Unix
 - For local development:
-    - Move the frida-gum devkit into `frida-gum-sys`, and the frida-core devkit into `frida-sys` and `cargo build` in the root
+    - Move the ainakan-gum devkit into `ainakan-gum-sys`, and the ainakan-core devkit into `ainakan-sys` and `cargo build` in the root

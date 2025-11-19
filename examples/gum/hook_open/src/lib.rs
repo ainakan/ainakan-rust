@@ -1,5 +1,5 @@
 use ctor::ctor;
-use frida_gum::{interceptor::Interceptor, Gum, Module, NativePointer};
+use ainakan_gum::{interceptor::Interceptor, Gum, Module, NativePointer};
 use lazy_static::lazy_static;
 use libc::{c_char, c_int, c_void};
 use std::cell::UnsafeCell;

@@ -7,9 +7,9 @@ license = "wxWindows"
 publish = false
 
 [dependencies]
-frida-gum = { path = "../../../frida-gum", features = [
+ainakan-gum = { path = "../../../ainakan-gum", features = [
     "event-sink",
     "invocation-listener",
 ] }
-frida-gum-sys = { path = "../../../frida-gum-sys" }
+ainakan-gum-sys = { path = "../../../ainakan-gum-sys" }
 lazy_static = "1.4"

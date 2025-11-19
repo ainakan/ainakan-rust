@@ -1,5 +1,5 @@
 use {
-    frida_gum::{interceptor::Interceptor, Gum, NativePointer},
+    ainakan_gum::{interceptor::Interceptor, Gum, NativePointer},
     lazy_static::lazy_static,
     libc::{c_char, c_uint, c_void},
     std::{

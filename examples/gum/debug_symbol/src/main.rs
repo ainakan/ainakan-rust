@@ -1,5 +1,5 @@
-use frida_gum::DebugSymbol;
-use frida_gum::{Gum, Module};
+use ainakan_gum::DebugSymbol;
+use ainakan_gum::{Gum, Module};
 use std::iter::Once;
 use std::sync::OnceLock;
 

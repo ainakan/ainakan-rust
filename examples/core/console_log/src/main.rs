@@ -1,7 +1,7 @@
-use frida::{DeviceManager, Frida, ScriptHandler, ScriptOption, ScriptRuntime};
+use ainakan::{DeviceManager, Ainakan, ScriptHandler, ScriptOption, ScriptRuntime};
 use std::sync::LazyLock;
 
-static FRIDA: LazyLock<Frida> = LazyLock::new(|| unsafe { Frida::obtain() });
+static AINAKAN: LazyLock<Ainakan> = LazyLock::new(|| unsafe { Ainakan::obtain() });
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
@@ -11,7 +11,7 @@ fn main() {
         return;
     }
 
-    let device_manager = DeviceManager::obtain(&FRIDA);
+    let device_manager = DeviceManager::obtain(&AINAKAN);
     let pid: u32 = args[1].parse().unwrap();
 
     if let Some(device) = device_manager.enumerate_all_devices().first() {
@@ -46,7 +46,7 @@ fn main() {
 struct Handler;
 
 impl ScriptHandler for Handler {
-    fn on_message(&mut self, message: frida::Message, _data: Option<Vec<u8>>) {
+    fn on_message(&mut self, message: ainakan::Message, _data: Option<Vec<u8>>) {
         println!("{:?}", message);
     }
 }

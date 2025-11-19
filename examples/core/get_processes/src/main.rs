@@ -1,10 +1,10 @@
-use frida::Frida;
+use ainakan::Ainakan;
 use std::sync::LazyLock;
 
-static FRIDA: LazyLock<Frida> = LazyLock::new(|| unsafe { Frida::obtain() });
+static AINAKAN: LazyLock<Ainakan> = LazyLock::new(|| unsafe { Ainakan::obtain() });
 
 fn main() {
-    let device_manager = frida::DeviceManager::obtain(&FRIDA);
+    let device_manager = ainakan::DeviceManager::obtain(&AINAKAN);
     let local_device = device_manager.get_local_device().unwrap();
     let processes = local_device.enumerate_processes();
 

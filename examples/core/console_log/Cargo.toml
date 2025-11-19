@@ -6,4 +6,4 @@ license = "wxWindows"
 publish = false
 
 [dependencies]
-frida = { path = "../../../frida" }
+ainakan = { path = "../../../ainakan" }

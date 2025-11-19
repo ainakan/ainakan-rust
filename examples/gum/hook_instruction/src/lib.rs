@@ -1,5 +1,5 @@
 use ctor::ctor;
-use frida_gum::{
+use ainakan_gum::{
     interceptor::{Interceptor, InvocationContext, ProbeListener},
     Gum, Module,
 };

@@ -6,4 +6,4 @@ authors = ["Ricardo J Marques Montilla / Xoffio"]
 publish = false
 
 [dependencies]
-frida = { path = "../../../frida" }
+ainakan = { path = "../../../ainakan" }

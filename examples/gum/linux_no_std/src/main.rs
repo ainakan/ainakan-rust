@@ -5,7 +5,7 @@
 
 use {
     core::{alloc::Layout, panic::PanicInfo},
-    frida_gum::Gum,
+    ainakan_gum::Gum,
     libc::{_exit, abort},
     libc_print::libc_println as println,
     static_alloc::Bump,

@@ -1,8 +1,8 @@
-use frida::DeviceType;
+use ainakan::DeviceType;
 
 fn main() {
-    let frida = unsafe { frida::Frida::obtain() };
-    let device_manager = frida::DeviceManager::obtain(&frida);
+    let ainakan = unsafe { ainakan::Ainakan::obtain() };
+    let device_manager = ainakan::DeviceManager::obtain(&ainakan);
 
     // get the first usb device (assuming there is one attached)
     let device = device_manager.get_device_by_type(DeviceType::USB).unwrap();

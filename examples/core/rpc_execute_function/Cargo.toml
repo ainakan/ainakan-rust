@@ -6,6 +6,6 @@ authors = ["Ricardo J Marques Montilla / Xoffio"]
 publish = false
 
 [dependencies]
-frida = { path = "../../../frida" }
+ainakan = { path = "../../../ainakan" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0.127"

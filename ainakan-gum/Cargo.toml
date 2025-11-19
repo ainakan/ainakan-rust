@@ -1,0 +1,51 @@
+[package]
+name = "ainakan-gum"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description.workspace = true
+
+[features]
+script = ["ainakan-gum-sys/js"]
+auto-download = ["ainakan-gum-sys/auto-download"]
+backtrace = ["libc", "std"]
+event-sink = ["ainakan-gum-sys/event-sink"]
+invocation-listener = ["ainakan-gum-sys/invocation-listener"]
+memory-access-monitor = ["std"]
+module-names = ["std"]
+stalker-observer = ["ainakan-gum-sys/stalker-observer"]
+stalker-params = ["ainakan-gum-sys/stalker-params"]
+std = []
+
+[dependencies]
+cstr_core = { version = "0.2.6", default-features = false, features = [
+    "alloc",
+] }
+ainakan-gum-sys = { path = "../ainakan-gum-sys", version = "0.17.0" }
+libc = { version = "0.2.172", default-features = false, optional = true }
+num = { version = "0.4.3", default-features = false }
+num-derive = { version = "0.4.2", default-features = false }
+num-traits = { version = "0.2.19", default-features = false }
+paste = { version = "1", default-features = false }
+spin = { version = "0.10", default-features = false, features = [
+    "mutex",
+    "spin_mutex",
+] }
+bitflags = "2.9.1"
+
+[dev-dependencies]
+lazy_static = "1"
+
+[badges]
+maintenance = { status = "experimental" }
+
+[package.metadata.docs.rs]
+features = [
+    "event-sink",
+    "invocation-listener",
+    "stalker-observer",
+    "stalker-params",
+    "std",
+]

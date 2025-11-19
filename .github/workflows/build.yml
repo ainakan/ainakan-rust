@@ -25,12 +25,12 @@ jobs:
           override: true
           target: ${{ matrix.target }}
           components: rustfmt, clippy
-      - name: Download FRIDA
+      - name: Download AINAKAN
         run: |
-          export FRIDA_VERSION=$(cat FRIDA_VERSION)
-          cd frida-gum-sys && wget https://github.com/frida/frida/releases/download/$FRIDA_VERSION/frida-gum-devkit-$FRIDA_VERSION-linux-${{ matrix.arch }}.tar.xz -O frida-gum.tar.xz && tar xJvf frida-gum.tar.xz
+          export AINAKAN_VERSION=$(cat AINAKAN_VERSION)
+          cd ainakan-gum-sys && wget https://github.com/ainakan/ainakan/releases/download/$AINAKAN_VERSION/ainakan-gum-devkit-$AINAKAN_VERSION-linux-${{ matrix.arch }}.tar.xz -O ainakan-gum.tar.xz && tar xJvf ainakan-gum.tar.xz
           cd ..
-          cd frida-sys && wget https://github.com/frida/frida/releases/download/$FRIDA_VERSION/frida-core-devkit-$FRIDA_VERSION-linux-${{ matrix.arch }}.tar.xz -O frida-core.tar.xz && tar xJvf frida-core.tar.xz
+          cd ainakan-sys && wget https://github.com/ainakan/ainakan/releases/download/$AINAKAN_VERSION/ainakan-core-devkit-$AINAKAN_VERSION-linux-${{ matrix.arch }}.tar.xz -O ainakan-core.tar.xz && tar xJvf ainakan-core.tar.xz
       - name: Install OpenSSL
         if: ${{ matrix.arch == 'x86' }}
         run: |
@@ -108,11 +108,11 @@ jobs:
         if: ${{ matrix.target == 'i686-unknown-linux-gnu' && matrix.os == 'ubuntu-latest' }}
         run: sudo apt-get update && sudo apt-get install gcc-multilib g++-multilib --fix-missing
       - name: Test Gum
-        run: cd frida-gum && cargo test --target ${{ matrix.target }} --features=auto-download
+        run: cd ainakan-gum && cargo test --target ${{ matrix.target }} --features=auto-download
       - name: Test Gum with all features
-        run: cd frida-gum && cargo test --target ${{ matrix.target }} --all-features
-  test-frida:
-    name: Test Frida
+        run: cd ainakan-gum && cargo test --target ${{ matrix.target }} --all-features
+  test-ainakan:
+    name: Test Ainakan
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
@@ -149,10 +149,10 @@ jobs:
       - name: Install gcc-multilib
         if: ${{ matrix.target == 'i686-unknown-linux-gnu' && matrix.os == 'ubuntu-latest' }}
         run: sudo apt-get update && sudo apt-get install gcc-multilib g++-multilib --fix-missing
-      - name: Test Frida
-        run: cd frida && cargo test --target ${{ matrix.target }} --features=auto-download
-      - name: Test Frida with all features
-        run: cd frida && cargo test --target ${{ matrix.target }} --all-features
+      - name: Test Ainakan
+        run: cd ainakan && cargo test --target ${{ matrix.target }} --features=auto-download
+      - name: Test Ainakan with all features
+        run: cd ainakan && cargo test --target ${{ matrix.target }} --all-features
   docs:
     name: Build Documentation
     runs-on: ubuntu-latest
@@ -167,7 +167,7 @@ jobs:
           override: true
       - name: Build Gum documentation
         run: |
-          cd frida-gum
+          cd ainakan-gum
           cargo rustdoc --features "event-sink invocation-listener"
   check-nostd:
     name: Check no_std
@@ -182,12 +182,12 @@ jobs:
           toolchain: nightly
           override: true
           target: x86_64-unknown-linux-gnu
-      - name: Download FRIDA
+      - name: Download AINAKAN
         run: |
-          export FRIDA_VERSION=$(cat FRIDA_VERSION)
-          cd frida-gum-sys && wget https://github.com/frida/frida/releases/download/$FRIDA_VERSION/frida-gum-devkit-$FRIDA_VERSION-linux-x86_64.tar.xz -O frida-gum.tar.xz && tar xJvf frida-gum.tar.xz
+          export AINAKAN_VERSION=$(cat AINAKAN_VERSION)
+          cd ainakan-gum-sys && wget https://github.com/ainakan/ainakan/releases/download/$AINAKAN_VERSION/ainakan-gum-devkit-$AINAKAN_VERSION-linux-x86_64.tar.xz -O ainakan-gum.tar.xz && tar xJvf ainakan-gum.tar.xz
           cd ..
-          cd frida-sys && wget https://github.com/frida/frida/releases/download/$FRIDA_VERSION/frida-core-devkit-$FRIDA_VERSION-linux-x86_64.tar.xz -O frida-core.tar.xz && tar xJvf frida-core.tar.xz
+          cd ainakan-sys && wget https://github.com/ainakan/ainakan/releases/download/$AINAKAN_VERSION/ainakan-core-devkit-$AINAKAN_VERSION-linux-x86_64.tar.xz -O ainakan-core.tar.xz && tar xJvf ainakan-core.tar.xz
       - name: Nostd
         uses: actions-rs/cargo@v1
         with:

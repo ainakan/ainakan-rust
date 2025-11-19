@@ -7,5 +7,5 @@ license = "MIT"
 publish = false
 
 [dependencies]
-frida-gum = { path = "../../../frida-gum", features = ["invocation-listener"] }
+ainakan-gum = { path = "../../../ainakan-gum", features = ["invocation-listener"] }
 lazy_static = "1.4"

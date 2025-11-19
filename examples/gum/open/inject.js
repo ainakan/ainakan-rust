@@ -1,4 +1,4 @@
-const frida = require('frida');
+const ainakan = require('ainakan');
 const fs = require('fs');
 const { promisify } = require('util');
 
@@ -11,7 +11,7 @@ let device = null;
 async function main() {
   const libraryBlob = await readFile(libraryPath);
 
-  device = await frida.getLocalDevice();
+  device = await ainakan.getLocalDevice();
   device.uninjected.connect(onUninjected);
 
   try {

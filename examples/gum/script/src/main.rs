@@ -1,6 +1,6 @@
 /* This example is in the public domain */
 
-use frida_gum::{self as gum, Backend};
+use ainakan_gum::{self as gum, Backend};
 use gum::{Gum, Script};
 use lazy_static::lazy_static;
 

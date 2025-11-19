@@ -1,8 +1,8 @@
 /* This example is in the public domain */
 
-use frida_gum as gum;
-use frida_gum::stalker::{Event, EventMask, EventSink, Stalker, StalkerObserver, Transformer};
-use frida_gum_sys as gum_sys;
+use ainakan_gum as gum;
+use ainakan_gum::stalker::{Event, EventMask, EventSink, Stalker, StalkerObserver, Transformer};
+use ainakan_gum_sys as gum_sys;
 use lazy_static::lazy_static;
 
 lazy_static! {

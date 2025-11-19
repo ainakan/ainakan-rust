@@ -1,9 +1,9 @@
 /* This example is in the public domain */
 
-use frida::Frida;
+use ainakan::Ainakan;
 use std::sync::LazyLock;
 
-static FRIDA: LazyLock<Frida> = LazyLock::new(|| unsafe { Frida::obtain() });
+static AINAKAN: LazyLock<Ainakan> = LazyLock::new(|| unsafe { Ainakan::obtain() });
 
 fn main() {
     println!("Hello, world!");

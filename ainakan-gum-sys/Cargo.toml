@@ -1,0 +1,25 @@
+[package]
+name = "ainakan-gum-sys"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description.workspace = true
+
+
+[features]
+auto-download = ["ainakan-build"]
+event-sink = ["cc"]
+invocation-listener = ["cc"]
+stalker-observer = ["cc"]
+stalker-params = ["cc"]
+js = []
+
+[build-dependencies]
+bindgen = "0.71.1"
+cc = { version = "1", optional = true }
+ainakan-build = { path = "../ainakan-build", optional = true, version = "0.17.0" }
+
+[badges]
+maintenance = { status = "experimental" }
